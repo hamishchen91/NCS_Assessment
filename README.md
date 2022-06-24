@@ -71,3 +71,23 @@ The R square is 0.5 and MSE is 0.03 of this model. The results are shown in foll
 Analysis
 The model indicates that the FFB is positively affected by the recent precipitation, last 12 months average of soil moisture, and last 6 months average of HA_Harvested. At the same time, it shows negative effects of recent HA_Harvested, average soil moisture within last 3/6 month, the variance of soil moisture in last 9 months and precipitation in last 3 months.
 
+
+
+Q3
+
+Q3-a
+a.What is the probability of the word “data” occurring in each line ? 
+![image](https://user-images.githubusercontent.com/66156262/175692578-802f1774-68b6-40b6-8783-e70276a10446.png)
+
+
+Q3-b
+b.What is the distribution of distinct word counts across all the lines ? 
+![image](https://user-images.githubusercontent.com/66156262/175692731-02526a3c-7bc8-4d37-abdc-3e4657cfdb27.png)
+
+
+Q3-c
+c.What is the probability of the word “analytics” occurring after the word “data” ? 
+
+Answer: It is 1/3
+![image](https://user-images.githubusercontent.com/66156262/175692874-233a3b85-4b59-46c7-a07c-7eb944df0a1c.png)
+
