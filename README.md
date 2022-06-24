@@ -53,26 +53,19 @@ Feature Engineering
 
 Firstly, HA_Harvested is dividend by 1000 to make it keep the same scale with other features. Temperature range is also created which is defined by Max_Temp - Min_Temp, indicating the variance of temperature of current month. Finally, The Date is converted to dummy variable of months.
 Moreover, some aggregation features are generated:
-Feature	New Feature Name	Aggregation mth	Statistics
-SoilMoisture	SoilMoisture_avg_{mth}m_agg
-SoilMoisture_std_{mth}m_agg	3, 6, 9, 12	Means, STD
-Average_Temp	Average_Temp_avg_{mth}m_agg
-Average_Temp_std_{mth}m_agg	3, 6, 9, 12	Means, STD
-Min_Temp	Min_Temp_std_{mth}m_agg	3, 6, 9, 12	STD
-Max_Temp	Max_Temp_std_{mth}m_agg	3, 6, 9, 12	STD
-Precipitation	Precipitation_avg_{mth}m_agg
-Precipitation_std_{mth}m_agg	3, 6, 9, 12	Means, STD
-HA_Harvested	HA_Harvested_adj_avg_{mth}m_agg
-HA_Harvested_adj_std_{mth}m_agg	3, 6, 9, 12	Means, STD
-temp_range	temp_range_avg_{mth}m_agg
-temp_range_std_{mth}m_agg	3, 6, 9, 12	Means, STD
+![1656099369843_B1330BCC-2D3B-4e88-8283-027D2833177E](https://user-images.githubusercontent.com/66156262/175655804-30175a15-9f85-4dba-8dc2-a1cc54f0595a.png)
+
 
 The features above calculate the statistics of original factor within recent x (3, 6, 9, 12) months, implying the lagging effects of the weather on the FFB.
 
 Modeling
+
 The model input (X) 68 features into the linear regression model. However, it will cause problem if these features are thrown into the trainer. Thus, we first run the Lasso regression the do the features selection, and the parameter is set as Lasso(alpha = 1, precompute = True, tol = 1e-7). After the features selection by Lasso regression, the linear regression is run with the selected features. The samples split by 70% for training and 30% of testing. Because of aggregation features with 12 months, I tried exclude the first 12 rows of data and compared the results without significantly different. Thus the model input kept the first 12 rows of data where the aggregation features does not aggregate the whole period. 
 The R square is 0.5 and MSE is 0.03 of this model. The results are shown in following graphs.
 
+![image](https://user-images.githubusercontent.com/66156262/175655829-2ec118ea-d49f-4128-93dc-acdc0dec4b3a.png)
+
+![image](https://user-images.githubusercontent.com/66156262/175655840-ea709f09-ca43-490c-ba3c-827328cf8b85.png)
 
 
 Analysis
