@@ -39,3 +39,10 @@ Based on elbow method and Silhouette Coefficient (shown in Graph 3), the optima 
 ![image](https://user-images.githubusercontent.com/66156262/175518399-d28e14fe-29e9-4757-9961-25ea7e7f2519.png)
 
 Graph 3: K Selection
+
+Graph 4 shows the means of each additives (after max-min standardization) and the radar map of each cluster of formulations. It states that each cluster contains different proportions among 9 additives. For example, cluster 0 and cluster 2 (with similar proportion of additive c, e, f, and i) are significantly different on additive a, b, d, g, h.
+
+![image](https://user-images.githubusercontent.com/66156262/175548069-8e094e52-cb46-4580-adf0-11cc34ffe7f0.png)
+
+Graph 4: Clusters’ Additives Means and Radar Map
+
