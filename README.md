@@ -46,3 +46,35 @@ Graph 4 shows the means of each additives (after max-min standardization) and th
 
 Graph 4: Clusters’ Additives Means and Radar Map
 
+
+Q2
+
+Feature Engineering
+
+Firstly, HA_Harvested is dividend by 1000 to make it keep the same scale with other features. Temperature range is also created which is defined by Max_Temp - Min_Temp, indicating the variance of temperature of current month. Finally, The Date is converted to dummy variable of months.
+Moreover, some aggregation features are generated:
+Feature	New Feature Name	Aggregation mth	Statistics
+SoilMoisture	SoilMoisture_avg_{mth}m_agg
+SoilMoisture_std_{mth}m_agg	3, 6, 9, 12	Means, STD
+Average_Temp	Average_Temp_avg_{mth}m_agg
+Average_Temp_std_{mth}m_agg	3, 6, 9, 12	Means, STD
+Min_Temp	Min_Temp_std_{mth}m_agg	3, 6, 9, 12	STD
+Max_Temp	Max_Temp_std_{mth}m_agg	3, 6, 9, 12	STD
+Precipitation	Precipitation_avg_{mth}m_agg
+Precipitation_std_{mth}m_agg	3, 6, 9, 12	Means, STD
+HA_Harvested	HA_Harvested_adj_avg_{mth}m_agg
+HA_Harvested_adj_std_{mth}m_agg	3, 6, 9, 12	Means, STD
+temp_range	temp_range_avg_{mth}m_agg
+temp_range_std_{mth}m_agg	3, 6, 9, 12	Means, STD
+
+The features above calculate the statistics of original factor within recent x (3, 6, 9, 12) months, implying the lagging effects of the weather on the FFB.
+
+Modeling
+The model input (X) 68 features into the linear regression model. However, it will cause problem if these features are thrown into the trainer. Thus, we first run the Lasso regression the do the features selection, and the parameter is set as Lasso(alpha = 1, precompute = True, tol = 1e-7). After the features selection by Lasso regression, the linear regression is run with the selected features. The samples split by 70% for training and 30% of testing. Because of aggregation features with 12 months, I tried exclude the first 12 rows of data and compared the results without significantly different. Thus the model input kept the first 12 rows of data where the aggregation features does not aggregate the whole period. 
+The R square is 0.5 and MSE is 0.03 of this model. The results are shown in following graphs.
+
+
+
+Analysis
+The model indicates that the FFB is positively affected by the recent precipitation, last 12 months average of soil moisture, and last 6 months average of HA_Harvested. At the same time, it shows negative effects of recent HA_Harvested, average soil moisture within last 3/6 month, the variance of soil moisture in last 9 months and precipitation in last 3 months.
+
