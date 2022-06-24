@@ -77,11 +77,13 @@ Q3
 
 Q3-a
 a.What is the probability of the word “data” occurring in each line ? 
+
 ![image](https://user-images.githubusercontent.com/66156262/175692578-802f1774-68b6-40b6-8783-e70276a10446.png)
 
 
 Q3-b
 b.What is the distribution of distinct word counts across all the lines ? 
+
 ![image](https://user-images.githubusercontent.com/66156262/175692731-02526a3c-7bc8-4d37-abdc-3e4657cfdb27.png)
 
 
@@ -89,5 +91,6 @@ Q3-c
 c.What is the probability of the word “analytics” occurring after the word “data” ? 
 
 Answer: It is 1/3
+
 ![image](https://user-images.githubusercontent.com/66156262/175692874-233a3b85-4b59-46c7-a07c-7eb944df0a1c.png)
 
