@@ -15,5 +15,6 @@ correlation matrix of the ingredient of additives is as follows:
 
 
 According to the correlation matrix, it shows high and positive correlation between ingredient a and g, and relatively high correlation among 1) b and h; 2) d, f, h.
-Meanwhile, it demonstrates negative relationship between ingredient: 1) a, d, e; 2) c, d, g, h; 3) f. g.
+Meanwhile, it demonstrates negative relationship between ingredient: 1) a, d, e; 2) c, d, g, h; 3) f, g.
+
 In other words, the ingredient a and g are always added together in the formulations. It is common that the ingredient mixed together with relatively high correlation. Conversely, the additives are not commonly added together with negative relationship stated above.
