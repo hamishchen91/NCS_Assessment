@@ -22,6 +22,7 @@ Q1-b
 
 The distribution of each additive is shown in Graph 1, and the box-plot of each additive is shown in Graph 2. 
 Graph 1 and 2 indicate that most of the formulations are without or with less additive f, h and i. For the additive c, it shows two extremes -- some formulations without or with less additive c, but others formulations with high proportion of it. Finally, additives a, b, d, e, and g are the main ingredients for most of the formulation.
+
 ![image](https://user-images.githubusercontent.com/66156262/175518338-64e0bc94-2eb3-4ea0-8bbe-cb86ca898003.png)
 
 Graph 1: Distribution of Additives
